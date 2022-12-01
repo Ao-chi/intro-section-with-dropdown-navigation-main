@@ -32,7 +32,7 @@ for (let i = 0; i < dropdownBtn.length; i++) {
         if (dropdownBtn[i].classList.contains("active")) {
             dropdownBtn[i].setAttribute("aria-expanded", "true");
         } else {
-            dropdownBtn[i].setAttribute("aria-expanded", "true");
+            dropdownBtn[i].setAttribute("aria-expanded", "false");
         }
     });
 }

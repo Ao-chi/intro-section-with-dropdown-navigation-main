@@ -82,7 +82,7 @@ header {
                     .nav-items {
                         font-weight: font-weight(font-bold);
                         flex-wrap: nowrap;
-                        padding: $p-1;
+                        padding: $p-1 $p-1_5;
 
                         a {
                             display: flex;
@@ -101,7 +101,10 @@ header {
             }
 
             .right-nav {
+                display: flex;
+                align-items: center;
                 padding: 0 $p-1_5;
+
                 .login {
                     border: none;
                 }

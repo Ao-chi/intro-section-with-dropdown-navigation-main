@@ -28,6 +28,12 @@ for (let i = 0; i < dropdownBtn.length; i++) {
         let drpMenu = this.nextElementSibling;
         drpMenu.classList.toggle("show");
         dropdownBtn[i].classList.toggle("active");
+
+        if (dropdownBtn[i].classList.contains("active")) {
+            dropdownBtn[i].setAttribute("aria-expanded", "true");
+        } else {
+            dropdownBtn[i].setAttribute("aria-expanded", "true");
+        }
     });
 }
 

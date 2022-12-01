@@ -25,7 +25,7 @@
         @include display-flex(baseline, flex-start);
         flex-direction: column;
         height: auto;
-        width: 105%;
+        width: 100%;
         overflow: visible;
         @include visibility-hiddden($visible, $opacity-1);
         background: $text-white;
@@ -54,7 +54,7 @@
 
     .features {
         top: 3rem;
-        left: -2.5rem;
+        left: -3rem;
         width: 9.5rem;
         .dropdown-item {
             @include display-flex(center, flex-start);

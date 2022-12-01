@@ -392,14 +392,14 @@ body {
   }*/
 }
 
-section {
+main {
   padding: 3rem;
 }
-section .wrapper {
+main .wrapper {
   max-width: 1100px;
   margin: 0 auto;
 }
-section .grid-container {
+main .grid-container {
   display: grid;
   gap: 1rem 5rem;
   max-width: 1200px;
@@ -408,44 +408,44 @@ section .grid-container {
   grid-template-areas: "p1 banner" "p2 banner" "sponsors banner";
 }
 @media (max-width: 992px) {
-  section .grid-container {
+  main .grid-container {
     gap: 2rem;
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "banner" "p1" "p2" "sponsors";
   }
 }
-section .p1 {
+main .p1 {
   grid-area: p1;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
-section .p1 .main-qoute {
+main .p1 .main-qoute {
   font-size: 36px;
   font-weight: 700;
   text-align: center;
   line-height: 1;
 }
 @media (min-width: 992px) {
-  section .p1 .main-qoute {
+  main .p1 .main-qoute {
     text-align: left;
     font-size: 4.75rem;
     margin: 5rem 0 3rem 0;
   }
 }
-section .p2 {
+main .p2 {
   grid-area: p2;
 }
-section .p2 .text {
+main .p2 .text {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 992px) {
-  section .p2 .text {
+  main .p2 .text {
     margin-bottom: 3.5rem;
     padding-right: 3.5rem;
   }
 }
-section .p2 .learn_more {
+main .p2 .learn_more {
   color: hsl(0deg, 0%, 98%);
   font-weight: 700;
   padding: 1rem 1.5rem;
@@ -454,87 +454,87 @@ section .p2 .learn_more {
   background: hsl(0deg, 0%, 8%);
   transition: ease-in-out 0.2s;
 }
-section .p2 .learn_more:hover {
+main .p2 .learn_more:hover {
   color: hsl(0deg, 0%, 8%);
   border: 1.5px solid hsl(0deg, 0%, 8%);
   border-radius: 14px;
   background: hsl(0deg, 0%, 98%);
 }
 @media (max-width: 992px) {
-  section .p2 {
+  main .p2 {
     text-align: center;
     margin: 0 auto;
     max-width: 500px;
   }
-  section .p2 .text p {
+  main .p2 .text p {
     font-size: 1rem;
   }
 }
 @media (max-width: 768px) {
-  section .p2 {
+  main .p2 {
     max-width: 100%;
     padding: 0 1rem;
   }
 }
-section .sponsors {
+main .sponsors {
   grid-area: sponsors;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
 }
-section .sponsors .sponsors-list {
+main .sponsors .sponsors-list {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-section .sponsors .sponsors-list .sponsor-icon {
+main .sponsors .sponsors-list .sponsor-icon {
   margin-right: 2rem;
 }
 @media (max-width: 992px) {
-  section .sponsors {
+  main .sponsors {
     margin-bottom: 1.5rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
   }
-  section .sponsors .sponsors-list {
+  main .sponsors .sponsors-list {
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
-  section .sponsors .sponsors-list .sponsor-icon {
+  main .sponsors .sponsors-list .sponsor-icon {
     margin-right: 2rem;
   }
 }
 @media (max-width: 768px) {
-  section .sponsors {
+  main .sponsors {
     display: flex;
     align-items: flex-end;
     justify-content: center;
   }
-  section .sponsors .sponsors-list {
+  main .sponsors .sponsors-list {
     flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  section .sponsors .sponsors-list .sponsor-icon {
+  main .sponsors .sponsors-list .sponsor-icon {
     margin: 0 0.875rem;
   }
-  section .sponsors .sponsors-list .sponsor-icon:nth-child(2) img, section .sponsors .sponsors-list .sponsor-icon:last-child img {
+  main .sponsors .sponsors-list .sponsor-icon:nth-child(2) img, main .sponsors .sponsors-list .sponsor-icon:last-child img {
     height: auto;
     width: 60px;
   }
-  section .sponsors .sponsors-list .sponsor-icon img {
+  main .sponsors .sponsors-list .sponsor-icon img {
     height: auto;
     width: 80px;
   }
 }
-section .banner {
+main .banner {
   grid-area: banner;
   overflow: hidden;
 }
-section .banner .image {
+main .banner .image {
   background: url("/images/image-hero-mobile.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -544,19 +544,19 @@ section .banner .image {
   transition: ease-in-out 0.3s;
 }
 @media (min-width: 375px) {
-  section .banner .image {
+  main .banner .image {
     background-size: cover;
     height: 400px;
   }
 }
 @media (min-width: 768px) {
-  section .banner .image {
+  main .banner .image {
     background-size: contain;
     height: 500px;
   }
 }
 @media (min-width: 992px) {
-  section .banner .image {
+  main .banner .image {
     background: url("/images/image-hero-desktop.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -566,7 +566,7 @@ section .banner .image {
   }
 }
 @media (max-width: 768px) {
-  section {
+  main {
     padding: 0;
   }
 }

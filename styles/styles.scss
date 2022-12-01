@@ -1,0 +1,194 @@
+@import "./abstracts/reset";
+@import "./abstracts/functions";
+@import "./base/fonts";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./components/header";
+@import "./components/button";
+@import "./components/dropdown";
+@import "./base/base";
+
+body {
+    @include Epilouge-font;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    // max-width: 1440px;
+    // margin: 0 auto;
+}
+
+section {
+    padding: $p-3;
+    .wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .grid-container {
+        display: grid;
+        //align-items: end;
+        gap: 1rem 5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        grid-template-columns: minmax(510px, 1fr) 2fr;
+        grid-template-areas:
+            "p1 banner"
+            "p2 banner"
+            "sponsors banner";
+
+        @include breakpoint(md, max) {
+            gap: 2rem;
+            grid-template-columns: minmax(0, 1fr);
+            grid-template-areas:
+                "banner"
+                "p1"
+                "p2"
+                "sponsors";
+        }
+    }
+
+    .p1 {
+        grid-area: p1;
+        @include display-flex(flex-end, center);
+
+        .main-qoute {
+            font-size: font-size(font-36);
+            font-weight: font-weight(font-bolder);
+            text-align: center;
+            line-height: 1;
+        }
+        @include breakpoint(md, min) {
+            .main-qoute {
+                text-align: left;
+                font-size: 4.75rem;
+                margin: 5rem 0 $p-3 0;
+            }
+        }
+    }
+
+    .p2 {
+        grid-area: p2;
+
+        .text {
+            margin-bottom: $p-1_5;
+
+            @include breakpoint(md, min) {
+                margin-bottom: 3.5rem;
+                padding-right: 3.5rem;
+            }
+        }
+        .learn_more {
+            color: $off-white;
+            font-weight: font-weight(font-bolder);
+            padding: $p-1 $p-1_5;
+            border: 1.5px solid $almost-black;
+            border-radius: 12px;
+            background: $almost-black;
+            transition: ease-in-out 0.2s;
+
+            &:hover {
+                color: $almost-black;
+                border: 1.5px solid $almost-black;
+                border-radius: 14px;
+                background: $off-white;
+            }
+        }
+        @include breakpoint(md, max) {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            .text {
+                p {
+                    font-size: font-size(font-16);
+                }
+            }
+        }
+        @include breakpoint(sm, max) {
+            max-width: 100%;
+            padding: 0 $p-1;
+        }
+    }
+
+    .sponsors {
+        grid-area: sponsors;
+        margin-bottom: $p-1_5;
+        @include display-flex(flex-end, flex-start);
+        .sponsors-list {
+            @include display-flex(center, flex-start);
+            .sponsor-icon {
+                margin-right: 2rem;
+            }
+        }
+        @include breakpoint(md, max) {
+            @include display-flex(flex-end, center);
+            .sponsors-list {
+                @include display-flex(center, flex-start);
+                .sponsor-icon {
+                    margin-right: 2rem;
+                }
+            }
+        }
+        @include breakpoint(sm, max) {
+            @include display-flex(flex-end, center);
+
+            .sponsors-list {
+                flex-wrap: wrap;
+                .sponsor-icon {
+                    margin: 0 0.875rem;
+
+                    &:nth-child(2),
+                    &:last-child {
+                        img {
+                            height: auto;
+                            width: 60px;
+                        }
+                    }
+
+                    img {
+                        height: auto;
+                        width: 80px;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner {
+        grid-area: banner;
+        overflow: hidden;
+        .image {
+            background: url("/images/image-hero-mobile.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 300px;
+            width: 100%;
+            transition: ease-in-out 0.3s;
+
+            @include breakpoint(xs, min) {
+                background-size: cover;
+                height: 400px;
+            }
+            @include breakpoint(sm, min) {
+                background-size: contain;
+                height: 500px;
+            }
+            @include breakpoint(md, min) {
+                background: url("/images/image-hero-desktop.png");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 700px;
+                width: 100%;
+            }
+        }
+    }
+    @include breakpoint(sm, max) {
+        padding: 0;
+    }
+}
+
+.attribution {
+    font-size: font-size(font-12);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}

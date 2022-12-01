@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: font-weight(font-bold);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: font-size(font-18);
+    margin-bottom: 1rem;
+    color: $medium-gray;
+}

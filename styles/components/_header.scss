@@ -1,0 +1,182 @@
+@import "./_button.scss";
+
+header {
+    padding: 2.5rem $p-1_5;
+    position: relative;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    @include breakpoint(md, max) {
+        padding: $p-1_5;
+    }
+    .header-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .hamburger {
+            border: none;
+            display: block;
+            @include breakpoint(md, min) {
+                display: none;
+            }
+        }
+        .icon {
+            display: flex;
+            align-items: center;
+            padding: 0 $p-1_5;
+            margin-top: 0.5rem;
+
+            path {
+                transition: all 0.2s;
+            }
+
+            &:hover {
+                path {
+                    fill: $medium-gray;
+                }
+            }
+        }
+
+        @include breakpoint(md, max) {
+            justify-content: space-between;
+
+            .icon,
+            .hamburger {
+                padding: 0;
+            }
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(4, 2, 15, 0.6);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 0;
+            transition: ease-in-out 0.3s;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+
+                @include breakpoint(md, min) {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .nav-container {
+                .nav-list {
+                    display: flex;
+                    align-items: center;
+
+                    .nav-items {
+                        font-weight: font-weight(font-bold);
+                        flex-wrap: nowrap;
+                        padding: $p-1;
+
+                        a {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            color: $medium-gray;
+                            transition: all 0.3s;
+                            span {
+                                margin-left: $p-0_5;
+                            }
+                            &:hover {
+                                color: $almost-black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right-nav {
+                padding: 0 $p-1_5;
+                .login {
+                    border: none;
+                }
+
+                .register {
+                    border: 1.5px solid $medium-gray;
+                    border-radius: 14px;
+                    padding: 0.625rem $p-1;
+                    margin-left: $p-1_5;
+                }
+            }
+
+            @include breakpoint(md, max) {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                bottom: 0;
+                width: 0;
+                height: 100%;
+                background-color: $text-white;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                padding: $p-1;
+                z-index: 1;
+                transition: ease-in-out 0.3s;
+                @include visibility-hiddden($hidden, $opacity-0);
+
+                &.show {
+                    right: 0;
+                    width: 260px;
+                    //width: 100%;
+                    @include visibility-hiddden($visible, $opacity-1);
+                }
+                .nav-container {
+                    width: 100%;
+
+                    .hamburger {
+                        padding: 0;
+                        margin-top: $p-1;
+                        margin-left: auto;
+                    }
+                    .nav-list {
+                        align-items: baseline;
+
+                        .nav-items {
+                            padding-top: $p-0;
+                        }
+                    }
+                }
+                .nav-list {
+                    padding-top: $p-1_5;
+                }
+                .nav-list,
+                .right-nav {
+                    @include display-flex(center, center);
+                    flex-direction: column;
+                    width: 100%;
+                }
+                .right-nav {
+                    padding: $p-0;
+                    .login {
+                        border-radius: 14px;
+                        padding: 0.625rem $p-1;
+                        margin-left: $p-0;
+                    }
+                    .register {
+                        border: 1.5px solid $medium-gray;
+                        border-radius: 14px;
+                        padding: 0.625rem $p-1;
+                        margin-left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+.nav-items {
+    position: relative;
+    font-size: font-size(font-14);
+
+    .dropdown-toggle {
+        padding: 0;
+        border: none;
+        font-size: font-size(font-14);
+
+        svg {
+            transition: all 0.2s;
+            transform: rotate(180deg);
+        }
+        &:not(.active) {
+            svg {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 3rem;
+        left: 1rem;
+        @include display-flex(baseline, flex-start);
+        flex-direction: column;
+        height: auto;
+        width: 105%;
+        overflow: visible;
+        @include visibility-hiddden($visible, $opacity-1);
+        background: $text-white;
+        border-radius: 10px;
+        box-shadow: 0px 10px 40px rgb(0 0 0 / 15%);
+        -webkit-box-shadow: 0px 10px 40px rgb(0 0 0 / 15%);
+        -moz-box-shadow: 0px 10px 40px rgb(0 0 0 / 15%);
+        padding: $p-1_5;
+        padding-bottom: $p-1;
+        transition: all 0.5s;
+
+        &:not(.show) {
+            height: 0;
+            padding: 0 $p-1_5;
+            overflow: hidden;
+            @include visibility-hiddden($hidden, $opacity-0);
+        }
+
+        li {
+            width: 100%;
+            .dropdown-item {
+                padding-bottom: $p-0_5;
+            }
+        }
+    }
+
+    .features {
+        top: 3rem;
+        left: -2.5rem;
+        width: 9.5rem;
+        .dropdown-item {
+            @include display-flex(center, flex-start);
+            padding-bottom: $p-0_5;
+
+            .drp-icon {
+                margin-left: $p-0 !important;
+                margin-right: $p-0_5;
+            }
+        }
+    }
+    @include breakpoint(md, max) {
+        .dropdown-toggle {
+            span {
+                margin-left: $p-0_5;
+            }
+        }
+
+        .dropdown-menu {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 0;
+            box-shadow: none;
+            padding-bottom: $p-0;
+            li {
+                .dropdown-item {
+                    padding-bottom: $p-1;
+                }
+            }
+        }
+    }
+}

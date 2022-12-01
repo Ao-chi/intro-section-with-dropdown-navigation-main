@@ -109,7 +109,7 @@ section {
 
     .sponsors {
         grid-area: sponsors;
-        margin-bottom: $p-1_5;
+
         @include display-flex(flex-end, flex-start);
         .sponsors-list {
             @include display-flex(center, flex-start);
@@ -118,6 +118,7 @@ section {
             }
         }
         @include breakpoint(md, max) {
+            margin-bottom: $p-1_5;
             @include display-flex(flex-end, center);
             .sponsors-list {
                 @include display-flex(center, flex-start);

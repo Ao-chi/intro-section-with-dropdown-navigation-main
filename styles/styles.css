@@ -456,7 +456,6 @@ section .p2 .learn_more:hover {
 }
 section .sponsors {
   grid-area: sponsors;
-  margin-bottom: 1.5rem;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -471,6 +470,7 @@ section .sponsors .sponsors-list .sponsor-icon {
 }
 @media (max-width: 992px) {
   section .sponsors {
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
